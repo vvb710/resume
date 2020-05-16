@@ -1,0 +1,26 @@
+{
+  "name": "my_portfolio_exp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "env-cmd -f ./config/dev.env nodemon server",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"env-cmd -f ./config/dev.env npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.1.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.17.1",
+    "express-validator": "^6.4.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.4"
+  }
+}
