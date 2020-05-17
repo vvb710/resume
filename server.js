@@ -36,7 +36,7 @@ app.post('/', [
         if (!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() });
         }
-        await sendWelcomeEmail(req.body)
+        sendWelcomeEmail(req.body)
         res.status(200).send('Your message has been sent successfully!!! Thank You for contacting')
     } catch (error) {
         res.status(500).json({ errors: 'Something went wrong!!! Please try again after sometime' })
